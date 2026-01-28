@@ -24,3 +24,6 @@ end
 group :development do
   gem "listen", "~> 3.2"
 end
+
+# Business Logic
+gem "interactor", "~> 3.0"
