@@ -6,7 +6,7 @@ logs: #: Tails the logs for the app (tail -f log/development.log)
 	docker-compose logs -f app
 
 routes: #: Rails routes (rake routes)
-	docker-compose run --rm app bundle exec rails routes
+	docker compose run --rm app bundle exec rails routes
 
 up: #: Starts the app in the background
 	docker compose up -d
@@ -15,16 +15,16 @@ test: #: Run the tests
 	docker compose run --rm app bundle exec rspec
 
 down: #: Stops the app
-	docker-compose down
+	docker compose down
 
 bundle: #: Installs gems, docker-compose down must be run before
-	docker-compose run --rm app bundle install
+	docker compose run --rm app bundle install
 
 console: #: Start a rails console
-	docker-compose run --rm app bundle exec rails console
+	docker compose run --rm app bundle exec rails console
 
 bash: #: Start a bash shell
-	docker-compose run --rm app bash
+	docker compose run --rm app bash
 
 build: #: Build the app
 	docker compose build app
