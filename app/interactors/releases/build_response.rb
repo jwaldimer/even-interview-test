@@ -1,4 +1,3 @@
-# app/interactors/releases/build_response.rb
 module Releases
   class BuildResponse < ApplicationInteractor
 

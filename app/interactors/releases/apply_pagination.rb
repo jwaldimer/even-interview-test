@@ -1,4 +1,3 @@
-# app/interactors/releases/apply_pagination.rb
 module Releases
   class ApplyPagination < ApplicationInteractor
 

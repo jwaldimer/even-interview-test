@@ -1,4 +1,3 @@
-# app/interactors/releases/apply_past_filter.rb
 module Releases
   class ApplyPastFilter < ApplicationInteractor
 
