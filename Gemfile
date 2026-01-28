@@ -16,14 +16,16 @@ gem "bootsnap", ">= 1.4.2", require: false
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :windows]
-  gem "rspec-rails", "~> 4.0.1"
-  gem "factory_bot_rails"
-  gem "faker"
+  
+  # To run tests
+  gem 'rspec-rails', '~> 7.0.0'
+  gem "factory_bot_rails", "~> 6.5"
+  gem "faker", "~> 3.5"
 end
 
 group :development do
   gem "listen", "~> 3.2"
 end
 
-# Business Logic
+# To Business Logic
 gem "interactor", "~> 3.0"
