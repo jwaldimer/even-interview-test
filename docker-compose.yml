@@ -1,13 +1,11 @@
-version: '3'
-
 services:
   db:
-    image: postgres
+    image: postgres:16
     environment:
       POSTGRES_USER: 'db_user'
       POSTGRES_PASSWORD: 'password'
     volumes:
-      - 'db:/var/lib/postgresql/data'
+      - 'db:/var/lib/postgresql'
 
   app:
     image: even_test:development

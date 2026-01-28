@@ -3,12 +3,9 @@ class Api::ReleasesController < ApplicationController
     result = Releases::Index.call(params: index_params)
 
     if result.success?
-      render json: result.payload, status: :ok
+      render_success(result.payload)
     else
-      render json: { 
-        error: result.error,
-        details: result.details
-      }, status: :unprocessable_entity
+      render_error(result)
     end
   end
 
@@ -18,7 +15,7 @@ class Api::ReleasesController < ApplicationController
 
   private
   def index_params
-    params.permit(:past, :limit, :page)
+    params.permit(Release::INDEX_PARAMS)
   end
 
 end

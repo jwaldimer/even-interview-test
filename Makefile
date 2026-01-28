@@ -9,7 +9,7 @@ routes: #: Rails routes (rake routes)
 	docker-compose run --rm app bundle exec rails routes
 
 up: #: Starts the app in the background
-	docker-compose up -d
+	docker compose up -d
 
 test: #: Run the tests
 	docker compose run --rm app bundle exec rspec
