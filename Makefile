@@ -12,7 +12,7 @@ up: #: Starts the app in the background
 	docker-compose up -d
 
 test: #: Run the tests
-	docker-compose run --rm app bundle exec rspec
+	docker compose run --rm app bundle exec rspec
 
 down: #: Stops the app
 	docker-compose down
@@ -27,17 +27,17 @@ bash: #: Start a bash shell
 	docker-compose run --rm app bash
 
 build: #: Build the app
-	docker-compose build app
+	docker compose build app
 
 dbmigrate: #: Migrate the database
 	docker-compose run --rm app bundle exec rails db:migrate
 	docker-compose run --rm -e RAILS_ENV=test app bundle exec rails db:migrate
 
 dbcreate: #: Create the database
-	docker-compose run --rm app bundle exec rails db:create db:schema:load
+	docker compose run --rm app bundle exec rails db:create db:schema:load
 
 dbseed: #: Seed the database
-	docker-compose run --rm app bundle exec rails db:seed
+	docker compose run --rm app bundle exec rails db:seed
 
 dbdrop: #: Drop the database
 	docker-compose run --rm app bundle exec rails db:drop
